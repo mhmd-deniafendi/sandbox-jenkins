@@ -1,7 +1,7 @@
 @Library("github-api-global-lib@main") _
 
 pipeline {
-    agent none
+    agent any
     
     stages {
         stage("Generate Properties") {
