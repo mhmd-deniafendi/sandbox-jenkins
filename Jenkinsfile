@@ -1,5 +1,16 @@
-@Library("belajar-jenkins-shared-library@main") _
+@Library("gtihub-api-global-lib@main") _
 
-pznPipeline([
-    type: "maven"
-])
+pipeline {
+    agent none
+    
+    stages {
+        stage("Testing Pipeline") {
+            agent { any }
+            steps {
+                script {
+                    greetingHello.world("Deni")
+                }
+            }
+        }
+    }
+}
