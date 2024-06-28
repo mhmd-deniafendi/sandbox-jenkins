@@ -1,4 +1,4 @@
-@Library("jenkins-library-test@main") _
+@Library("github-api-global-lib@main") _
 
 pipeline {
     agent none
