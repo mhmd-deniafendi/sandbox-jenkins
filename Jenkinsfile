@@ -21,7 +21,7 @@ pipeline {
         stage("Sytem Operasi Test") {
             steps {
                 script {
-                    if "${OS_VERSION}" == greetingHello.os("Windows") {
+                    if ( "${OS_VERSION}" == greetingHello.os("Windows") ) {
                         echo "your OS windows"
                     } else {
                         echo "OS unknown"
