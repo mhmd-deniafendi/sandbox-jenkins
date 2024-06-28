@@ -4,10 +4,28 @@ pipeline {
     agent none
     
     stages {
-        stage("Testing Pipeline") {
+        stage("Generate Properties") {
             steps {
                 script {
-                    greetingHello.world("Deni")
+                    properties([
+                        parameters([
+                            string(defaultValue: '', name: 'OS_VERSION', trim: true),
+                            // string(defaultValue: '', name: 'APP', trim: true)
+                        ])
+                    ])
+                    currentBuild.displayName = "Sandbox-shared-Lib"
+                }
+            }
+        }
+
+        stage("Sytem Operasi Test") {
+            steps {
+                script {
+                    if "${OS_VERSION}" == greetingHello.os("Windows") {
+                        echo "your OS windows"
+                    } else {
+                        echo "OS unknown"
+                    }
                 }
             }
         }
