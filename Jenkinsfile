@@ -5,7 +5,6 @@ pipeline {
     
     stages {
         stage("Testing Pipeline") {
-            agent { any }
             steps {
                 script {
                     greetingHello.world("Deni")
