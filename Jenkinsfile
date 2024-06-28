@@ -1,4 +1,4 @@
-@Library("gtihub-api-global-lib@main") _
+@Library("github-api-global-lib@main") _
 
 pipeline {
     agent none
